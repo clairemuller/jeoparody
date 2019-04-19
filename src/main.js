@@ -21,7 +21,7 @@ document.getElementById('submit').addEventListener("click", function(e){
 
 // 2 - FIND OR CREATE USER; CREATE NEW GAME
 function findUser(username) {
-  return fetch('http://localhost:3000/users', {
+  return fetch('https://jeoparody.herokuapp.com/users', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -38,7 +38,7 @@ function findUser(username) {
 // 3 - ONCE LOGGED IN
 function startFetch() {
   displayRules();
-  fetch('http://localhost:3000/categories')
+  fetch('https://jeoparody.herokuapp.com/categories')
   .then(res => res.json())
   .then(categories => {
     // setTimeout(() => renderNewGame(categories), 2000);
@@ -216,7 +216,7 @@ function endGame() {
 }
 
 function updateDbScore() {
-  fetch(`http://localhost:3000/users/${currentUser.id}`, {
+  fetch(`https://jeoparody.herokuapp.com/users/${currentUser.id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
