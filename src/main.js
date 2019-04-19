@@ -41,8 +41,8 @@ function startFetch() {
   fetch('https://jeoparody.herokuapp.com/categories')
   .then(res => res.json())
   .then(categories => {
-    // setTimeout(() => renderNewGame(categories), 2000);
-    renderNewGame(categories)
+    setTimeout(() => renderNewGame(categories), 2000);
+    // renderNewGame(categories)
   });
 }
 
@@ -148,8 +148,8 @@ function displayQuestion() {
   overlay.style.display = 'block';
   let questionDiv = document.getElementById('question');
   questionDiv.innerText = currentClue.question.toUpperCase();
-  // setTimeout(() => displayAnswer(), 2000);
-  displayAnswer();
+  setTimeout(() => displayAnswer(), 2000);
+  // displayAnswer();
 }
 
 // 9.5 - REMOVE HTML TAGS & ESCAPE CHARS
@@ -168,8 +168,8 @@ function displayAnswer() {
   currentClue.answer = removeHTML(currentClue.answer);
   let answerDiv = document.getElementById('answer');
   answerDiv.innerText = currentClue.answer.toUpperCase();
-  // setTimeout(() => correct(), 2000);
-  correct();
+  setTimeout(() => correct(), 2000);
+  // correct();
 }
 
 function correct() {
