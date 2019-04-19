@@ -15,8 +15,8 @@ let currentUser = '';
 document.getElementById('submit').addEventListener("click", function(e){
   e.preventDefault();
   username = document.getElementById('username').value.toLowerCase();
-  findUser(username)
   startFetch();
+  findUser(username);
 })
 
 // 2 - FIND OR CREATE USER; CREATE NEW GAME
