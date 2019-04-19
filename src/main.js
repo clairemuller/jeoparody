@@ -1,3 +1,5 @@
+const baseURL = 'http://localhost:3000/';
+const herokuURL = 'https://jeoparody.herokuapp.com/';
 let introDiv = document.getElementById('intro');
 let form = document.getElementById('login');
 let gameDiv = document.getElementById('game');
@@ -20,7 +22,8 @@ document.getElementById('submit').addEventListener("click", function(e){
 
 // 2 - FIND OR CREATE USER; CREATE NEW GAME
 function findUser(username) {
-  return fetch('https://jeoparody.herokuapp.com/users', {
+  console.log('click!');
+  fetch(herokuURL + 'users', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -38,7 +41,7 @@ function findUser(username) {
 // 3 - ONCE LOGGED IN
 function startFetch() {
   displayRules();
-  fetch('https://jeoparody.herokuapp.com/categories')
+  fetch(herokuURL + 'categories')
   .then(res => res.json())
   .then(categories => {
     setTimeout(() => renderNewGame(categories), 5000);
@@ -215,7 +218,7 @@ function endGame() {
 }
 
 function updateDbScore() {
-  fetch(`https://jeoparody.herokuapp.com/users/${currentUser.id}`, {
+  fetch(herokuURL + `users/${currentUser.id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -224,9 +227,3 @@ function updateDbScore() {
     body: JSON.stringify({username: currentUser.username, score: score})
   })
 }
-
-
-
-
-
-// end
