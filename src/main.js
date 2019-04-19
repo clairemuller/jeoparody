@@ -8,7 +8,7 @@ let overlayContent = document.getElementById('overlay-content');
 let score = 0;
 let sidebar = document.createElement('div');
 sidebar.id = 'sidebar';
-sidebar.innerHTML = `SCORE<br>$${score}`
+sidebar.innerHTML = `SCORE<br>$${score}`;
 let currentClue = "";
 let clickedCount = 0;
 let currentUser = '';
@@ -151,7 +151,6 @@ function displayQuestion() {
   let questionDiv = document.getElementById('question');
   questionDiv.innerText = currentClue.question.toUpperCase();
   setTimeout(() => displayAnswer(), 7000);
-  // displayAnswer();
 }
 
 // 9.5 - REMOVE HTML TAGS & ESCAPE CHARS
@@ -171,7 +170,6 @@ function displayAnswer() {
   let answerDiv = document.getElementById('answer');
   answerDiv.innerText = currentClue.answer.toUpperCase();
   setTimeout(() => correct(), 2000);
-  // correct();
 }
 
 function correct() {
