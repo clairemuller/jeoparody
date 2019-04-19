@@ -112,25 +112,27 @@ div.column div {
 #logo {
   font-family: Gyparody;
   color: white;
-  font-size: 230px;
+  font-size: 180px;
   font-weight: normal;
   margin: 30px;
-  transition: all 3s ease-in 1s;
+  /* transition: all 1s ease-in 1s; */
 }
 
 #login {
   font-family: Optima;
   color: white;
   font-size: 30px;
-  width: 30%;
-  margin: auto;
+  width: 20%;
+  margin: 3% auto;
   border: 1px solid white;
+  position: sticky;
+  padding: 1%;
 }
 
 #rules {
   color: white;
   font-family: Optima;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 #sidebar {
