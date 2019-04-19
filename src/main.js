@@ -16,6 +16,7 @@ document.getElementById('submit').addEventListener("click", function(e){
   e.preventDefault();
   username = document.getElementById('username').value.toLowerCase();
   findUser(username)
+  startFetch();
 })
 
 // 2 - FIND OR CREATE USER; CREATE NEW GAME
@@ -32,7 +33,6 @@ function findUser(username) {
   .then(user => {
     currentUser = user;
   })
-  startFetch();
 }
 
 // 3 - ONCE LOGGED IN
@@ -41,8 +41,7 @@ function startFetch() {
   fetch('https://jeoparody.herokuapp.com/categories')
   .then(res => res.json())
   .then(categories => {
-    setTimeout(() => renderNewGame(categories), 2000);
-    // renderNewGame(categories)
+    setTimeout(() => renderNewGame(categories), 5000);
   });
 }
 
@@ -148,7 +147,7 @@ function displayQuestion() {
   overlay.style.display = 'block';
   let questionDiv = document.getElementById('question');
   questionDiv.innerText = currentClue.question.toUpperCase();
-  setTimeout(() => displayAnswer(), 2000);
+  setTimeout(() => displayAnswer(), 7000);
   // displayAnswer();
 }
 
