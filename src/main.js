@@ -15,7 +15,6 @@ let currentUser = '';
 document.getElementById('submit').addEventListener("click", function(e){
   e.preventDefault();
   username = document.getElementById('username').value.toLowerCase();
-  startFetch();
   findUser(username);
 })
 
@@ -33,6 +32,7 @@ function findUser(username) {
   .then(user => {
     currentUser = user;
   })
+  startFetch();
 }
 
 // 3 - ONCE LOGGED IN
