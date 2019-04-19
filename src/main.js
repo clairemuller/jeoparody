@@ -16,7 +16,6 @@ document.getElementById('submit').addEventListener("click", function(e){
   e.preventDefault();
   username = document.getElementById('username').value.toLowerCase();
   findUser(username)
-  startFetch();
 })
 
 // 2 - FIND OR CREATE USER; CREATE NEW GAME
@@ -33,6 +32,7 @@ function findUser(username) {
   .then(user => {
     currentUser = user;
   })
+  startFetch();
 }
 
 // 3 - ONCE LOGGED IN
