@@ -174,7 +174,7 @@ function displayAnswer() {
 
 function correct() {
   let correctDiv = document.getElementById('correct');
-  correctDiv.innerText = 'CORRECT? Y/N';
+  correctDiv.innerText = 'WERE YOU CORRECT? Y/N';
   document.body.addEventListener("keydown", yesOrNo);
 }
 
