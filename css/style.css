@@ -71,7 +71,6 @@ div.column div {
   left: 50%;
   height: 100%;
   width: 100%;
-  /* overflow: auto; */
   transform: translate(-50%,-50%);
 }
 
@@ -83,19 +82,8 @@ div.column div {
   margin: 3%;
 }
 
-#question {
-  /* height: 40%; */
-  /* margin: 3% 5%; */
-  /* margin: 2%; */
-}
-
 #answer {
   color: #ead81c;
-  /* height: 20%; */
-}
-
-#correct {
-  /* height: 20%; */
 }
 
 #intro {
@@ -115,7 +103,6 @@ div.column div {
   font-size: 180px;
   font-weight: normal;
   margin: 30px;
-  /* transition: all 1s ease-in 1s; */
 }
 
 #login {

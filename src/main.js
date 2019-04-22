@@ -22,7 +22,6 @@ document.getElementById('submit').addEventListener("click", function(e){
 
 // 2 - FIND OR CREATE USER; CREATE NEW GAME
 function findUser(username) {
-  console.log('click!');
   fetch(herokuURL + 'users', {
     method: "POST",
     headers: {
