@@ -152,7 +152,7 @@ function displayQuestion() {
   setTimeout(() => displayAnswer(), 7000);
 }
 
-// 9.5 - REMOVE HTML TAGS & ESCAPE CHARS
+// 9.5 - REMOVE HTML TAGS & ESCAPE CHARACTERS
 function removeHTML(element) {
   if (element.includes('<i>')) {
     element = element.replace(/<[^>]*>/g, '');
@@ -163,7 +163,7 @@ function removeHTML(element) {
   return element;
 }
 
-// 10 - AFTER 5 SECONDS DISPLAY ANSWER
+// 10 - AFTER 7 SECONDS DISPLAY ANSWER
 function displayAnswer() {
   currentClue.answer = removeHTML(currentClue.answer);
   let answerDiv = document.getElementById('answer');
@@ -171,12 +171,14 @@ function displayAnswer() {
   setTimeout(() => correct(), 2000);
 }
 
+// 11 - AFTER 2 SECONDS DISPLAY Y/N
 function correct() {
   let correctDiv = document.getElementById('correct');
   correctDiv.innerText = 'WERE YOU CORRECT? Y/N';
   document.body.addEventListener("keydown", yesOrNo);
 }
 
+// 12 - USER KEYS Y OR N
 function yesOrNo() {
   // IF YES
   if (event.keyCode === 89) {
@@ -190,7 +192,7 @@ function yesOrNo() {
   }
 }
 
-// 11 - BRING BACK GAME BOARD
+// 13 - BRING BACK GAME BOARD
 function finishClue() {
   document.body.removeEventListener("keydown", yesOrNo);
   let question = document.getElementById('question');
@@ -200,6 +202,7 @@ function finishClue() {
   answer.textContent = '';
   correct.textContent = '';
 
+  // IF NO MORE CLUES
   if (clickedCount === 25) {
     setTimeout(() => endGame(), 1000);
   } else {
@@ -208,12 +211,14 @@ function finishClue() {
   }
 }
 
+// 14 - SHOW FINAL SCORE
 function endGame() {
   updateDbScore();
   question.textContent = "GAME OVER!";
   answer.textContent = `FINAL SCORE: $${score}`;
 }
 
+// 15 - UPDATE DATABASE
 function updateDbScore() {
   fetch(herokuURL + `users/${currentUser.id}`, {
     method: "PATCH",

@@ -1,12 +1,21 @@
 @font-face {
-  font-family: Korinna; /* for clue cards */
-  src: url(fonts/korinan.ttf);
-  font-family: Optima; /* for clue cards */
-  src: url(fonts/Optima.ttc);
-  font-family: Gyparody; /* for Jeopardy logo */
-  src: url(fonts/gyparody.ttf);
   font-family: Swiss-911; /* for categories & dollar amounts */
   src: url(fonts/swiss911.ttf);
+}
+
+@font-face {
+  font-family: Optima; /* for clue cards */
+  src: url(fonts/Optima.ttc);
+}
+
+@font-face {
+  font-family: Korinna; /* for clue cards */
+  src: url(fonts/korinan.ttf);
+}
+
+@font-face {
+  font-family: Gyparody; /* for Jeopardy logo */
+  src: url(fonts/gyparody.ttf);
 }
 
 * {
