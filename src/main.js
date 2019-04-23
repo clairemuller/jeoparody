@@ -105,10 +105,12 @@ function getFive(arr) {
 function renderColumn(category) {
   const column = document.createElement('div');
   const title = document.createElement('div');
+  const titleP = document.createElement('p');
 
   column.classList.add('column');
-  title.classList.add('title');
-  title.textContent = category.title.toUpperCase();
+  titleP.classList.add('title');
+  titleP.textContent = category.title.toUpperCase();
+  title.appendChild(titleP);
   column.appendChild(title);
 
   renderClues(category, column)
